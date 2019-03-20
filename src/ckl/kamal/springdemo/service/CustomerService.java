@@ -1,10 +1,13 @@
 package ckl.kamal.springdemo.service;
 
+
 import java.util.List;
+
 
 import ckl.kamal.springdemo.entity.Customer;
 
 public interface CustomerService {
+
 
 	public List<Customer> getCustomers();
 
@@ -12,6 +15,8 @@ public interface CustomerService {
 
 	public Customer getCustomer(int theId);
 
+
+	
 
 	
 }

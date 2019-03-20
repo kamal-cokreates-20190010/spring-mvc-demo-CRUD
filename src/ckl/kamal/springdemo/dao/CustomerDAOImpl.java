@@ -1,5 +1,6 @@
 package ckl.kamal.springdemo.dao;
 
+
 import java.util.List;
 
 import org.hibernate.Session;
@@ -9,6 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+
 import ckl.kamal.springdemo.entity.Customer;
 
 @Repository
@@ -17,6 +27,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	// need to inject the session factory
 	@Autowired
 	private SessionFactory sessionFactory;
+
 			
 	@Override
 	public List<Customer> getCustomers() {
@@ -36,6 +47,9 @@ public class CustomerDAOImpl implements CustomerDAO {
 		return customers;
 	}
 
+
+	
+
 	@Override
 	public void saveCustomer(Customer theCustomer) {
 
@@ -46,6 +60,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		currentSession.save(theCustomer);
 		
 	}
+
 
 	@Override
 	public Customer getCustomer(int theId) {
@@ -58,6 +73,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		
 		return theCustomer;
 	}
+
 
 
 

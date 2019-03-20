@@ -21,6 +21,7 @@ public class CustomerController {
 	// need to inject our customer service
 	@Autowired
 	private CustomerService customerService;
+
 	
 	@GetMapping("/list")
 	public String listCustomers(Model theModel) {
@@ -33,6 +34,7 @@ public class CustomerController {
 		
 		return "list-customers";
 	}
+
 	
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
@@ -50,9 +52,11 @@ public class CustomerController {
 		
 		// save the customer using our service
 		customerService.saveCustomer(theCustomer);	
-		
+
 		return "redirect:/customer/list";
 	}
+
+	
 	
 
 }
